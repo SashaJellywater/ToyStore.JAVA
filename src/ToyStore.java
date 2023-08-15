@@ -18,8 +18,9 @@ public class ToyStore {
 
     public void generateResults() {
         try {
-            FileWriter fileWriter = new FileWriter("results.txt");
+            FileWriter fileWriter = new FileWriter("results.txt", true);
             List<Toy> extractedToys = new ArrayList<>();
+            fileWriter.write("\n");
             for (int i = 0; i < 10 && !toyQueue.isEmpty(); i++) {
                 Toy toy = toyQueue.poll();
                 extractedToys.add(toy);
